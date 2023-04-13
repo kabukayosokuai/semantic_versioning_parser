@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 import '../tool.dart';
 
 void main() {
-  CreateTestList prac = CreateTestList();
+  TestList prac = TestList();
   Map lists = prac.createInputAndExpectedSV(
       versionType: "major",
       addPreRelease: true,
@@ -81,8 +81,8 @@ void main() {
   });
 }
 
-class CreateTestList {
-  ///テスト用のバージョンコア配列(予測値)
+class TestList {
+  ///テスト用のバージョン生成用のパラメータ(今後の改善点：ハードコードではなく、自動生成できるようにする)
   List<String> _majorListSamples = [
     "1.0.0",
     "2.0.0",
