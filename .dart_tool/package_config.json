@@ -302,13 +302,13 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "semantic_versioning_parser",
+      "name": "svp",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2023-04-12T02:15:23.064803Z",
+  "generated": "2023-04-14T01:38:02.572859Z",
   "generator": "pub",
   "generatorVersion": "2.19.6"
 }

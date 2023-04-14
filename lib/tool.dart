@@ -1,4 +1,4 @@
-List tool(List<String> args) {
+List tool(List<String?> args) {
   return args;
 }
 
