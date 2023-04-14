@@ -15,7 +15,7 @@ List tool(List<String> args) {
     return ["フォーマットに沿った入力がありませんでした"];
   }
 
-  //並び替え
+  //並び替え(コアバージョンの並び替えには不適切)
   outputList.sort();
 
   //コアバージョン毎に[dupCoreVersions]へ格納
@@ -24,12 +24,12 @@ List tool(List<String> args) {
 
   //[dupCoreVersions]の各要素に対して並び替え
   dupCoreVersions.forEach((key, arrs) {
-    bool forSkip(sv) => sv.length == key.length;
-    bool forTake(sv) => sv.length == key.length;
+    bool forSort(sv) => sv.length == key.length;
     List<String> sorted = [
-      ...arrs.skipWhile(forSkip),
-      ...arrs.takeWhile(forTake)
+      ...arrs.skipWhile(forSort),
+      ...arrs.takeWhile(forSort)
     ];
+    sortedOutputList.addAll(sorted);
   });
 
   return outputList;
