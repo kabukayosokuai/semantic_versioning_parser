@@ -149,9 +149,10 @@ void main() {
       expect(tool(list), equals(["フォーマットに沿った入力がありませんでした"]));
     });
 
-    list.addAll(["5.6.7", "1.2.3"]);
+    List<String> list2 = [...list];
+    list2.addAll(["5.6.7", "1.2.3"]);
     test("フォーマットに沿った入力が２つあった場合", () {
-      expect(tool(list), equals(["1.2.3", "5.6.7"]));
+      expect(tool(list2), equals(["1.2.3", "5.6.7"]));
     });
   });
 }
