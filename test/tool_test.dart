@@ -11,7 +11,7 @@ void main() {
 
   group("要件１：引数に複数の文字列を受け取る)", () {
     test("入力する引数が無い場合", () {
-      List<String?> list = [];
+      List<String> list = [];
       expect(tool(list), equals(["引数を入力してください"]));
     });
     test("入力する引数が１つの場合", () {
@@ -91,7 +91,7 @@ void main() {
     });
 
     group("プレリリースとビルドが混在している場合", () {
-      addPreRelease = false;
+      addPreRelease = true;
       addBuild = true;
       command = "half";
       testList.conductTests(
@@ -149,9 +149,10 @@ void main() {
       expect(tool(list), equals(["フォーマットに沿った入力がありませんでした"]));
     });
 
-    list.addAll(["5.6.7", "1.2.3"]);
+    List<String> list2 = [...list];
+    list2.addAll(["5.6.7", "1.2.3"]);
     test("フォーマットに沿った入力が２つあった場合", () {
-      expect(tool(list), equals(["1.2.3", "5.6.7"]));
+      expect(tool(list2), equals(["1.2.3", "5.6.7"]));
     });
   });
 }
